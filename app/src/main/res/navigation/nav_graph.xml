@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.android.example.beeline.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_currentTarifFragment"
+            app:destination="@id/currentTarifFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentTarifFragment"
+        android:name="com.android.example.beeline.CurrentTarifFragment"
+        android:label="fragment_current_tarif"
+        tools:layout="@layout/fragment_current_tarif">
+        <action
+            android:id="@+id/action_currentTarifFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_currentTarifFragment_to_listTarifFragment"
+            app:destination="@id/listTarifFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listTarifFragment"
+        android:name="com.android.example.beeline.ListTarifFragment"
+        android:label="fragment_list_tarif"
+        tools:layout="@layout/fragment_list_tarif" >
+        <action
+            android:id="@+id/action_listTarifFragment_to_tarifFragment"
+            app:destination="@id/tarifFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tarifFragment"
+        android:name="com.android.example.beeline.TarifFragment"
+        android:label="fragment_tarif"
+        tools:layout="@layout/fragment_tarif" />
+</navigation>
